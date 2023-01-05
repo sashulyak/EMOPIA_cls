@@ -44,7 +44,8 @@ def midi_feature_extract():
     midi_dictionary = pickle.load(open(path_dictionary, "rb"))
     event_to_int = midi_dictionary[0]
 
-    midi_path = "../dataset/PEmoDataset/midis"
+    # midi_path = "../dataset/PEmoDataset/midis"
+    midi_path = "./dataset/EMOPIA_2.2/midis"
     remi_path = "./dataset/remi_midi"
     magenta_path = "./dataset/magenta_midi"
 

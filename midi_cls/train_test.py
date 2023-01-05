@@ -4,7 +4,8 @@ import json
 import os
 import torch
 from omegaconf import DictConfig, OmegaConf
-from pytorch_lightning import Trainer, seed_everything
+from pytorch_lightning import Trainer
+from pytorch_lightning import seed_everything
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 
@@ -97,7 +98,8 @@ def main(args) -> None:
 
     trainer = Trainer(
                         max_epochs= args.max_epochs,
-                        gpus= [args.gpus],
+                        # gpus= [args.gpus],
+                        gpus=0,
                         distributed_backend= args.distributed_backend,
                         benchmark= args.benchmark,
                         deterministic= args.deterministic,
